@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div>
+<table>
+  <tr>
+    <th>Tweet</th>
+    <th>Polarity</th>
+    <th>Category</th>
+  </tr>
+{% for tweet in all_tweets %}
+    {% comment %} {% if tweet.type_of_tweet == "Very Subjective": tweet.style = 'subtr' %}
+    {% elif tweet.type_of_tweet == "Very Ocjective": tweet.style = 'objbtr' %}
+    {% else tweet.style = 'normaltr'%}
+    {% endif %} {% endcomment %}
+    <tr>
+        <td>{{tweet.tweet}}</td>
+        <td>{{tweet.polarity}}</td>
+        <td>{{tweet.type_of_tweet}}</td>
+    </tr>
+    {% comment %} <p>Subjectivity of tweet : {{tweet.subjectivity}}</p>
+    <p>Type : {{tweet.type_of_tweet}}</p> {% endcomment %}
+{% endfor %}
+</table>
+</div>
+
+{% endblock content %}
