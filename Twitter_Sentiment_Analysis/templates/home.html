@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Hello {{name}}!!!!</h1>
+
+<form action="add">
+    Enter the consumer Key : <input type="text" name="consumer_key"><br>
+    Enter the consumer secert Key : <input type="text" name="consumer_secert_key"><br>
+    Enter the access token  : <input type="text" name="access_token"><br>
+    Enter the access token secret : <input type="text" name="access_token_secret"><br>
+    Enter the topic  : <input type="text" name="topic"><br>
+    <input type="submit">
+</form>
+
+{% endblock %} 
